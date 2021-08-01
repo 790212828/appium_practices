@@ -1,0 +1,27 @@
+@startuml
+autonumber
+participant 首页indexpage as indexpage
+participant 通讯录页contactlistpage as contactlistpage
+participant 添加成员页addmemberpage as addmemberpage
+participant 编辑成员页editcontactpage as editcontactpage
+participant 通讯录查询页contactsearchpage as contactsearchpage
+participant 个人信息页面memberinfomationpage as memberinfomationpage
+
+
+indexpage->contactlistpage:跳转到通讯录页面
+contactlistpage->addmemberpage:点击添加成员操作按钮\n跳转到添加成员页面
+addmemberpage->editcontactpage:点击手动添加按钮\n跳转到编辑成员页面
+editcontactpage->editcontactpage:编辑输入成员信息
+editcontactpage->addmemberpage:点击保存按钮\n返回添加成员页
+addmemberpage->contactlistpage:点击返回按钮\n返回通讯录页面
+contactlistpage->contactlistpage:检查断言新增成员信息
+
+
+contactlistpage->contactsearchpage:点击查询按钮，跳转到通讯录查询页面
+contactsearchpage->memberinfomationpage:根据姓名查询成员,点击成员，进入个人信息页面
+memberinfomationpage->editcontactpage:个人信息分页点击编辑成员，跳转编辑成员页面
+editcontactpage->contactsearchpage:点击删除成员按钮，跳转到通讯录查询页面
+contactsearchpage->contactsearchpage:根据姓名查询成员，断言：无搜索结果
+
+
+@enduml

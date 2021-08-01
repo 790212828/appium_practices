@@ -1,0 +1,14 @@
+#关键字，就是我们希望通过写一些关键字，就能运行自动化测试，不用把测试步骤写到.py文件中
+#目前我们先定义机组关键字，后面再进行实现，这些关键字不是定死的还没有实现，可以自由发挥定义
+
+goto_market:
+  - action: click
+    by: "xpath"
+    express: '//*[@text="行情"]'
+  - action: click
+    by: "id"
+    express: 'com.xueqiu.android:id/action_search'
+  - action: send_keys
+    by: "id"
+    express: 'com.xueqiu.android:id/search_input_text'
+    content: "alibaba"
