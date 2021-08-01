@@ -2,7 +2,7 @@
 echo "# pytest_practices1" >> README.md
 git init
 git add README.md
-git commit -m "selenium录播课练习和作业 "
+git commit -m "appium_practices & 作业 "
 git branch -M main
 git remote add origin https://github.com/790212828/appium_practices.git
 git push -u origin main
